@@ -1,0 +1,14 @@
+<mat-card>
+    <mat-card-title>Visualizar Cadastro</mat-card-title>
+
+    <div class="view">
+        <h1><strong>Id:</strong> {{ people.id }}</h1>
+        <img [src]="people.img" class="img-person">
+        <h1><strong>Nome:</strong> {{ people.name }}</h1>
+        <h1><strong>Data de Nascimento:</strong> {{ people.dtnasc }}</h1>
+    </div>
+</mat-card>
+
+<button mat-raised-button (click)="cancelar()" color="primary">
+    Voltar
+</button>

@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-title>Remover Cadastro</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="people.name" name="name" disabled>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Data de Nascimento" [(ngModel)]="people.dtnasc" name="dtnasc" disabled>
+        </mat-form-field>
+    
+        <mat-form-field>
+            <input matInput placeholder="Imagem" [(ngModel)]="people.img" name="img" disabled>
+        </mat-form-field>
+    
+    </form>
+</mat-card>
+
+<button mat-raised-button (click)="deletePeople()" color="warn">
+    Remover
+</button>
+
+<button mat-raised-button (click)="cancelar()" color="primary">
+    Cancelar
+</button>
