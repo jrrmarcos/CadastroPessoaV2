@@ -1,0 +1,16 @@
+{
+  "pessoa": [
+    {
+      "id": 1,
+      "name": "Marcos Júnior",
+      "dtnasc": "27/06/1997",
+      "img": "https://thispersondoesnotexist.com/image"
+    },
+    {
+      "id": 2,
+      "name": "João da Silva Castro",
+      "dtnasc": "14/05/1997",
+      "img": "https://thispersondoesnotexist.com/image"
+    }
+  ]
+}
