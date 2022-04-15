@@ -28,7 +28,8 @@ import { PeopleReadComponent } from './components/people/people-read/people-read
 import { MatTableModule } from '@angular/material/table';
 import { PeopleUpdateComponent } from './components/people/people-update/people-update.component';
 import { PeopleDeleteComponent } from './components/people/people-delete/people-delete.component';
-import { PeopleViewComponent } from './components/people/people-view/people-view.component'
+import { PeopleViewComponent } from './components/people/people-view/people-view.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,7 @@ import { PeopleViewComponent } from './components/people/people-view/people-view
     MatInputModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

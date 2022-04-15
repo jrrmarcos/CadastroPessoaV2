@@ -10,14 +10,13 @@ import { PeopleService } from '../people.service';
 export class PeopleReadComponent implements OnInit {
 
   peoples: People[]
-  displayedColumns = ['id','name','dtnasc', 'img', 'action']
+  displayedColumns = ['id','name','dtnasc', 'action']
 
   constructor(private peopleService: PeopleService) { }
 
   ngOnInit(): void {
     this.peopleService.read().subscribe(peoples => {
       this.peoples = peoples
-      console.log(peoples)
     })
   }
 
