@@ -1,3 +1,20 @@
+<-- Projeto desenvolvido para a matéria de Tópicos para Computação 2 do IFSP São Carlos -->
+
+Esse projeto é uma segunda versão do CadastroPessoa e nele foram modificados e aprofundados os seguintes conceitos: 
+  - Melhoria no template utilizando a linguagem de design Material;
+  - Melhoria na organização dos componentes;
+  - Criação de um simples backend utilizando JSON Server para facilitar o CRUD de pessoas;
+  - Finalização do CRUD com Listagem de uma pessoa em específico, Alteração e melhoria na Listagem Geral, Cadastro e Delete;
+  - Services; 
+  - Rotas;
+  - Tratamento de erros.
+
+Para executar, copie o código para sua máquina e instale as dependências com "npm install" e execute na porta padrão http://localhost:4200 com "ng serve"
+
+O backend se encontra em outra branch e para executá-lo, instale as dependências com "npm install" e execute na porta http://localhost:3001/pessoas com "npm start"
+
+Bons estudos!
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
