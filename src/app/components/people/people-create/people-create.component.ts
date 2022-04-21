@@ -32,10 +32,18 @@ export class PeopleCreateComponent implements OnInit {
     const dtAtual = new Date()
     const dtAtualPipe = this.datepipe.transform(dtAtual, 'yyyyMMdd')
 
-    if (dtUserPipe  >= dtAtualPipe) {
-      this.peopleService.dataInvalida(true)
-    } else {
+    console.log(dtUserPipe)
+    console.log(dtAtualPipe)
 
+    if (dtUserPipe  >= dtAtualPipe){
+      this.peopleService.dataInvalida(true)
+    } 
+    
+    else if (this.people.name == '') {
+      this.peopleService.nomeInvalido(true)
+    }
+
+    else {
       this.peopleService.create(this.people).subscribe(() => {
         this.peopleService.showMessage('Pessoa Cadastrada!')
         this.router.navigate(['/people']) //Navegando para página inicial de pessoas após cadastras

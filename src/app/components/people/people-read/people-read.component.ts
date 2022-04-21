@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { People } from '../people.model';
 import { PeopleService } from '../people.service';
 
@@ -12,7 +13,8 @@ export class PeopleReadComponent implements OnInit {
   peoples: People[]
   displayedColumns = ['id','name','dtnasc', 'action']
 
-  constructor(private peopleService: PeopleService) { }
+  constructor(private peopleService: PeopleService,
+            private router: Router) { }
 
   ngOnInit(): void {
     this.peopleService.read().subscribe(peoples => {

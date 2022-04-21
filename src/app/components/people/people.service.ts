@@ -36,8 +36,13 @@ export class PeopleService {
     return EMPTY
   }
 
+  nomeInvalido(e: any): Observable<any> {
+    this.showMessage('Nome não pode ser vazio!', true)
+    return EMPTY
+  }
+
   create(people: People): Observable<People> {
-    if(people.img == ''){
+    if (people.img == '') {
       people.img = 'https://sdumont.lncc.br/images/projects/no-image.png'
     }
     return this.http.post<People>(this.baseUrl, people).pipe(
@@ -64,7 +69,15 @@ export class PeopleService {
 
   update(people: People): Observable<People> {
     const url = `${this.baseUrl}/${people.id}`
-    return this.http.put<People>(url, people).pipe(
+    if (people.name == '') {
+      this.showMessage('Nome não pode ser vazio!')
+    } else {
+      return this.http.put<People>(url, people).pipe(
+        map(obj => obj),
+        catchError(e => this.tratamentodeErros(e))
+      )
+    }
+    return this.http.get<People[]>(this.baseUrl).pipe(
       map(obj => obj),
       catchError(e => this.tratamentodeErros(e))
     )

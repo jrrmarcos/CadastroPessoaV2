@@ -37,9 +37,15 @@ export class PeopleUpdateComponent implements OnInit {
     const dtAtual = new Date()
     const dtAtualPipe = this.datepipe.transform(dtAtual, 'yyyyMMdd')
 
-    if (dtUserPipe >= dtAtualPipe) {
+    if (dtUserPipe  >= dtAtualPipe){
       this.peopleService.dataInvalida(true)
-    } else {
+    } 
+    
+    else if (this.people.name == '') {
+      this.peopleService.nomeInvalido(true)
+    }
+  
+    else {
         this.peopleService.update(this.people).subscribe(() => {
         this.peopleService.showMessage('Cadastro atualizado com êxito!')
         this.router.navigate(['/people'])

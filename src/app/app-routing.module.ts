@@ -32,7 +32,11 @@ const routes: Routes = [
   {
     path: "people/view/:id",
     component: PeopleViewComponent
-  }];
+  },
+{
+  path: '**',
+  component: HomeComponent
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
